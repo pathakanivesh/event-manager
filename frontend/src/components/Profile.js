@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { QRCodeCanvas } from 'qrcode.react';
+import { API_BASE_URL } from '../config';  // ADD THIS IMPORT
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -14,7 +15,8 @@ const Profile = () => {
 
       const fetchBookings = async () => {
         try {
-          const res = await axios.get(`http://localhost:5000/api/bookings/user/${parsedUser.email}`);
+          // UPDATE THIS LINE:
+          const res = await axios.get(`${API_BASE_URL}/api/bookings/user/${parsedUser.email}`);
           setBookings(res.data);
         } catch (err) {
           console.error('Failed to fetch bookings:', err);
@@ -90,7 +92,7 @@ const Profile = () => {
                   boxShadow: '0 1px 4px rgba(0,0,0,0.1)'
                 }}>
                   <QRCodeCanvas
-                    value={`https://02aa-2409-40e3-188-abc8-499b-a043-740e-b27d.ngrok-free.app/ticket/${booking._id}`}
+                    value={`${API_BASE_URL}/ticket/${booking._id}`}  // UPDATED THIS LINE TOO
                     size={100}
                   />
 

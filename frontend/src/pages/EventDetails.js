@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { API_BASE_URL } from '../config';  // ADD THIS IMPORT
 
 const EventDetails = () => {
   const { eventId } = useParams();
@@ -13,7 +14,8 @@ const EventDetails = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/events/${eventId}`);
+        // UPDATE THIS LINE:
+        const res = await axios.get(`${API_BASE_URL}/api/events/${eventId}`);
         setEvent(res.data);
       } catch (err) {
         console.error(err);
@@ -43,7 +45,8 @@ const EventDetails = () => {
      const user = JSON.parse(localStorage.getItem("user"));
 
     try {
-      const orderRes = await axios.post('http://localhost:5000/api/bookings/create-order', {
+      // UPDATE THIS LINE:
+      const orderRes = await axios.post(`${API_BASE_URL}/api/bookings/create-order`, {
         amount: event.price * 100,
       });
 
@@ -58,7 +61,8 @@ const EventDetails = () => {
         order_id,
         handler: async function (response) {
           try {
-            await axios.post('http://localhost:5000/api/bookings/confirm', {
+            // UPDATE THIS LINE:
+            await axios.post(`${API_BASE_URL}/api/bookings/confirm`, {
               eventId: event._id,
               userEmail:  user?.email,
               amount,

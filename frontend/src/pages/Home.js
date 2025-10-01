@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';  // ADD THIS IMPORT
 
 const bannerImages = [
   'https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1600&q=80',
@@ -16,7 +17,8 @@ const Home = () => {
   const [bannerIndex, setBannerIndex] = useState(0);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/events')
+    // UPDATE THIS LINE:
+    axios.get(`${API_BASE_URL}/api/events`)
       .then(res => {
         setEvents(res.data);
         const initialIndexes = {};
