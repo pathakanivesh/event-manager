@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+
+# Env files
+*.env
+
+# Logs
+logs/
+*.log
+
+# VS Code settings
+.vscode/
+
+# Build outputs
+frontend/build/
+backend/tickets/
+
+# Optional temp files
+.DS_Store

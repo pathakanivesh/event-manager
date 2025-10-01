@@ -37,7 +37,7 @@ const Profile = () => {
 
   return (
     <div style={{ maxWidth: '1000px', margin: 'auto', padding: '20px' }}>
-      <h2>Hello, {user.name}</h2>
+      <h2>Hello bhai, {user.name}</h2>
 
       <div style={{ marginBottom: '20px', backgroundColor: '#f5f5f5', padding: '20px', borderRadius: '8px' }}>
         <h3>Profile Info</h3>
