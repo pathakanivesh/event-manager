@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { API_BASE_URL } from '../config';  // ADD THIS IMPORT
+
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';  // REPLACED THE IMPORT
 
 function Login() {
   const [email, setEmail] = useState('');

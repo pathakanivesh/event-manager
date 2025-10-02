@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { QRCodeCanvas } from 'qrcode.react';
-import { API_BASE_URL } from '../config';  // ADD THIS IMPORT
+
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';  // REPLACED THE IMPORT
 
 const Profile = () => {
   const [user, setUser] = useState(null);

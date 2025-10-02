@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { API_BASE_URL } from '../config';  // ADD THIS IMPORT
+
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';  // REPLACED THE IMPORT
 
 function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '',phone: '' });
