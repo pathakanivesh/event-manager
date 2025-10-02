@@ -5,9 +5,10 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import EventDetails from './pages/EventDetails';
-import Checkout from './pages/Checkout';
+import Checkout from './pages/ContactUs';
 import TicketPage from './pages/TicketPage';
 import Profile from './components/Profile';
+import ContactUs from './pages/ContactUs';
 const App = () => {
   return (
     <Router>
@@ -20,7 +21,7 @@ const App = () => {
         <Route path="/event/:eventId" element={<EventDetails />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/ticket/:id" element={<TicketPage />} />
-        <Route path="/checkout/:id" element={<Checkout />} />
+     <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </Router>
   );

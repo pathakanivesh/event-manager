@@ -37,8 +37,11 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Nav.Link as={Link} to="/login" style={{ color: darkMode ? '#fff' : '#000' }}>Login</Nav.Link>
+              
+                
                 <Nav.Link as={Link} to="/register" style={{ color: darkMode ? '#fff' : '#000' }}>Register</Nav.Link>
+                <Nav.Link as={Link} to="/login" style={{ color: darkMode ? '#fff' : '#000' }}>Login</Nav.Link>
+                <Nav.Link as={Link} to="/contact" style={{ color: darkMode ? '#fff' : '#000' }}>Contact Us</Nav.Link>
               </>
             )}
             <Button
